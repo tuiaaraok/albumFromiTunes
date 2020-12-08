@@ -11,11 +11,6 @@ import Foundation
 struct Album: Decodable {
     let resultCount: Int
     let results: [AlbumDescription]
-    
-//    enum CodingKeys: String, CodingKey {
-//        case resultCount = "Date"
-//        case results = "Valute"
-//    }
 }
 
 struct AlbumDescription: Decodable {
@@ -23,19 +18,11 @@ struct AlbumDescription: Decodable {
     let artistName: String
     let collectionName: String
     let artworkUrl100: String
-//    let collectionPrice: Double
     let currency: String
     let copyright: String
     let country: String
     let releaseDate: String
     let primaryGenreName: String
-
-//    enum CodingKeys: String, CodingKey {
-//        case nominal = "Nominal"
-//        case name = "Name"
-//        case value = "Value"
-//        case previous = "Previous"
-//    }
 }
 
 struct Track: Decodable {
@@ -45,7 +32,6 @@ struct Track: Decodable {
 
 struct TrackDetails: Decodable {
     let collectionId: Int
-    let artistName: String
     let trackName: String
     let trackNumber: Int
 }

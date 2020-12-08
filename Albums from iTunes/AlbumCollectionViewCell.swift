@@ -9,15 +9,16 @@
 import UIKit
 
 class AlbumCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     
     func configureCell(album: AlbumDescription) {
+        
         ParserManager.fetchImage(imageString: album.artworkUrl100, imageView: albumImage)
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
+        albumImage.layer.cornerRadius = 5
     }
-    
-    
 }

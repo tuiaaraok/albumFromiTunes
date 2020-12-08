@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		63FDFE17257E698F000B80C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE16257E698F000B80C8 /* AppDelegate.swift */; };
 		63FDFE19257E698F000B80C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE18257E698F000B80C8 /* SceneDelegate.swift */; };
-		63FDFE1B257E698F000B80C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE1A257E698F000B80C8 /* ViewController.swift */; };
+		63FDFE1B257E698F000B80C8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE1A257E698F000B80C8 /* MainViewController.swift */; };
 		63FDFE1E257E698F000B80C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE1C257E698F000B80C8 /* Main.storyboard */; };
 		63FDFE21257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE1F257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld */; };
 		63FDFE23257E6990000B80C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE22257E6990000B80C8 /* Assets.xcassets */; };
@@ -17,13 +17,16 @@
 		63FDFE2E257E6AA6000B80C8 /* ParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */; };
 		63FDFE30257E6FBF000B80C8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2F257E6FBF000B80C8 /* Model.swift */; };
 		63FDFE32257EB239000B80C8 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */; };
+		63FDFE36257FB6A7000B80C8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */; };
+		63FDFE38257FB7E8000B80C8 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE37257FB7E8000B80C8 /* TrackTableViewCell.swift */; };
+		63FDFE3A257FD204000B80C8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE39257FD204000B80C8 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63FDFE13257E698F000B80C8 /* Albums from iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Albums from iTunes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FDFE16257E698F000B80C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FDFE18257E698F000B80C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63FDFE1A257E698F000B80C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63FDFE1A257E698F000B80C8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		63FDFE1D257E698F000B80C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63FDFE20257E698F000B80C8 /* Albums_from_iTunes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Albums_from_iTunes.xcdatamodel; sourceTree = "<group>"; };
 		63FDFE22257E6990000B80C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserManager.swift; sourceTree = "<group>"; };
 		63FDFE2F257E6FBF000B80C8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		63FDFE37257FB7E8000B80C8 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		63FDFE39257FD204000B80C8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +72,12 @@
 			children = (
 				63FDFE16257E698F000B80C8 /* AppDelegate.swift */,
 				63FDFE18257E698F000B80C8 /* SceneDelegate.swift */,
-				63FDFE1A257E698F000B80C8 /* ViewController.swift */,
+				63FDFE1A257E698F000B80C8 /* MainViewController.swift */,
 				63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */,
 				63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */,
+				63FDFE39257FD204000B80C8 /* DetailTableViewCell.swift */,
+				63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */,
+				63FDFE37257FB7E8000B80C8 /* TrackTableViewCell.swift */,
 				63FDFE2F257E6FBF000B80C8 /* Model.swift */,
 				63FDFE1C257E698F000B80C8 /* Main.storyboard */,
 				63FDFE22257E6990000B80C8 /* Assets.xcassets */,
@@ -150,12 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FDFE1B257E698F000B80C8 /* ViewController.swift in Sources */,
+				63FDFE1B257E698F000B80C8 /* MainViewController.swift in Sources */,
 				63FDFE2E257E6AA6000B80C8 /* ParserManager.swift in Sources */,
 				63FDFE21257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld in Sources */,
+				63FDFE38257FB7E8000B80C8 /* TrackTableViewCell.swift in Sources */,
 				63FDFE30257E6FBF000B80C8 /* Model.swift in Sources */,
+				63FDFE36257FB6A7000B80C8 /* DetailTableViewController.swift in Sources */,
 				63FDFE17257E698F000B80C8 /* AppDelegate.swift in Sources */,
 				63FDFE19257E698F000B80C8 /* SceneDelegate.swift in Sources */,
+				63FDFE3A257FD204000B80C8 /* DetailTableViewCell.swift in Sources */,
 				63FDFE32257EB239000B80C8 /* AlbumCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
