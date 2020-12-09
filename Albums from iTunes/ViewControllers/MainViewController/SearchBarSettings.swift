@@ -12,8 +12,6 @@ extension MainViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         DataFetcher.fetchData(self.urlFirstPart + WorkWithString.replaceSpaces(searchText).lowercased() + self.urlSecondPart, completion: self.fetch(albums:))
-        
-        print(self.urlFirstPart + WorkWithString.replaceSpaces(searchText).lowercased() + self.urlSecondPart)
     }
 
     func searchBarCancelButtonClicked(_ searchController: UISearchBar) {

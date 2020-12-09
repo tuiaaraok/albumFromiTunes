@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8F6E6717-D854-44B4-A4E2-5F256F5AE4B5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEC842CE-5F22-4E09-A1C6-0B7FA0081D16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Albums from iTunes/ParserManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchTrack(completion:name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CEC842CE-5F22-4E09-A1C6-0B7FA0081D16 - 6240f90d9d2c0564"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Albums_from_iTunes.ParserManager.fetchData(completion: (Swift.Array&lt;Albums_from_iTunes.TrackDetails&gt;) -&gt; (), name: Swift.String) -&gt; ()"
+                  moduleName = "Albums from iTunes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajsensisigin/Desktop/Albums%20from%20iTunes/Albums%20from%20iTunes/ParserManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "931">
+               </Location>
+               <Location
+                  uuid = "CEC842CE-5F22-4E09-A1C6-0B7FA0081D16 - 6240f90d9d2c0564"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Albums_from_iTunes.ParserManager.fetchData(completion: (Swift.Array&lt;Albums_from_iTunes.TrackDetails&gt;) -&gt; (), name: Swift.String) -&gt; ()"
+                  moduleName = "Albums from iTunes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajsensisigin/Desktop/Albums%20from%20iTunes/Albums%20from%20iTunes/ParserManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1155">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CBF5E8D-766C-4947-8683-A807B4A1AE6B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Albums from iTunes/ParserManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "DataFetcher"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75A28D96-128B-4E52-83CF-03EB126C5B7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Albums from iTunes/ParserManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "fetchTrack(completion:name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
