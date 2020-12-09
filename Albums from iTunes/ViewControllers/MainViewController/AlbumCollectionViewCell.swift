@@ -16,12 +16,12 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     func configureCell(album: AlbumDescription) {
         
-        DispatchQueue.global().async {
-            DataFetcher.fetchImage(imageString: album.artworkUrl100, imageView: self.albumImage)
-        }
+        DataFetcher.fetchImage(imageString: WorkWithString.changeImageSizeInUrl(album.artworkUrl100) , imageView: self.albumImage)
       
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
         albumImage.layer.cornerRadius = 5
+        albumImage.layer.borderWidth = 0.2
+        albumImage.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

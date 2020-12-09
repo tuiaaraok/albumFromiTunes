@@ -16,24 +16,13 @@ struct Album: Decodable {
 struct AlbumDescription: Decodable {
     let collectionId: Int
     let artistName: String
-    let artistId: Int
+    let artistId: Int?
     let collectionName: String
     let artworkUrl100: String
-    let currency: String
-    let copyright: String
+    let copyright: String?
     let country: String
-    let releaseDate: String
     let primaryGenreName: String
     let trackCount: Int
 }
 
-struct Track: Decodable {
-    let resultCount: Int
-    let results: [TrackDetails]
-}
 
-struct TrackDetails: Decodable {
-    let collectionId: Int?
-    let trackName: String?
-    let trackNumber: Int?
-}
