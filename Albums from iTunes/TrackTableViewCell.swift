@@ -13,17 +13,8 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var trackName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(_ track: TrackDetails) {
+        number.text = String(track.trackNumber!)
+        trackName.text = track.trackName
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    
-
 }

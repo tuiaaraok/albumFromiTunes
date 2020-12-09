@@ -16,7 +16,10 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     func configureCell(album: AlbumDescription) {
         
-        ParserManager.fetchImage(imageString: album.artworkUrl100, imageView: albumImage)
+        DispatchQueue.global().async {
+            DataFetcher.fetchImage(imageString: album.artworkUrl100, imageView: self.albumImage)
+        }
+      
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
         albumImage.layer.cornerRadius = 5

@@ -14,30 +14,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var parser = ParserManager()
+    var dataFetcher = DataFetcher()
     var albums: [AlbumDescription] = []
     var searchAlbum: [AlbumDescription] = []
     var tracks: [TrackDetails] = []
     var isSearch = false
     
+    let urlFirstPart =  "https://itunes.apple.com/search?term="
+    let urlSecondPart = "&entity=album"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        parser.fetchData(completion: fetch(albums:), name: "blackpink")
+         let urlString = urlFirstPart + "blackpink" + urlSecondPart
+        
+        dataFetcher.fetchData(urlString, completion: fetch(albums:))
+//        parser.fetchAlbum(completion: fetch(albums:), name: "blackpink")
     }
  
-    func fetch(albums: [AlbumDescription]) {
-        DispatchQueue.main.async {
-            self.albums = albums
-            self.collectionView.reloadData()
-        }
-    }
-    
-    func fetch(tracks: [TrackDetails]) {
-        DispatchQueue.main.async {
-            self.tracks = tracks
-            self.collectionView.reloadData()
-        }
+    func fetch(albums: Album) {
+        
+        self.albums = albums.results
+        self.collectionView.reloadData()
     }
     
     // MARK: - Collectionview data source
@@ -56,28 +53,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         return CGSize(width: 500, height: 265)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-////         let album = isSearch ? searchAlbum[indexPath.row] : albums[indexPath.item]
-//        parser.fetchData(completion: fetch(tracks:), name: searchBar.searchTextField.text ?? "blackpink")
-//    }
-
+    // MARK: - Navigation
+       
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "detail" else { return }
+        guard let indexPath = collectionView.indexPathsForSelectedItems?.first else {return}
+        let detailTableVC = segue.destination as! DetailTableViewController
+        detailTableVC.album = albums[indexPath.row]
+    }
 }
 
 extension MainViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var text = ""
-        for i in searchText {
-            if i == " " {
-                text += "+"
-            } else {
-                text += "\(i)"
-            }
-        }
-        parser.fetchData(completion: fetch(albums:), name: text.lowercased())
+        
+//        parser.fetchAlbum(completion: fetch(albums:), name: replaceSpaces(searchText).lowercased())
+        dataFetcher.fetchData(urlFirstPart + replaceSpaces(searchText).lowercased() + urlSecondPart, completion: fetch(albums:))
         self.collectionView.reloadData()
     }
 
@@ -89,26 +85,16 @@ extension MainViewController: UISearchBarDelegate{
         view.endEditing(true)
     }
     
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "detail" else { return }
-        guard let indexPath = collectionView.indexPathsForSelectedItems?.first else {return}
-        let detailTableVC = segue.destination as! DetailTableViewController
-        detailTableVC.album = albums[indexPath.row]
-//        detailTableVC.tracks = trackFilter(album: albums[indexPath.item])
-        
-    }
-    
-    func trackFilter(album: AlbumDescription) -> [TrackDetails] {
-        var tracksOfAlbum: [TrackDetails] = []
-        for track in tracks {
-            if track.collectionId == album.collectionId {
-                tracksOfAlbum.append(track)
+    func replaceSpaces(_ text: String) -> String {
+        var word = ""
+        for i in text {
+            if i == " " {
+                word += "+"
+            } else {
+                word += "\(i)"
             }
         }
-        print(tracksOfAlbum)
-        return tracksOfAlbum
+        return word
     }
 }
 

@@ -14,7 +14,7 @@
 		63FDFE21257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE1F257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld */; };
 		63FDFE23257E6990000B80C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE22257E6990000B80C8 /* Assets.xcassets */; };
 		63FDFE26257E6990000B80C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE24257E6990000B80C8 /* LaunchScreen.storyboard */; };
-		63FDFE2E257E6AA6000B80C8 /* ParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */; };
+		63FDFE2E257E6AA6000B80C8 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */; };
 		63FDFE30257E6FBF000B80C8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2F257E6FBF000B80C8 /* Model.swift */; };
 		63FDFE32257EB239000B80C8 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */; };
 		63FDFE36257FB6A7000B80C8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */; };
@@ -32,7 +32,7 @@
 		63FDFE22257E6990000B80C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDFE25257E6990000B80C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63FDFE27257E6990000B80C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserManager.swift; sourceTree = "<group>"; };
+		63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		63FDFE2F257E6FBF000B80C8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 				63FDFE16257E698F000B80C8 /* AppDelegate.swift */,
 				63FDFE18257E698F000B80C8 /* SceneDelegate.swift */,
 				63FDFE1A257E698F000B80C8 /* MainViewController.swift */,
-				63FDFE2D257E6AA6000B80C8 /* ParserManager.swift */,
+				63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */,
 				63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */,
 				63FDFE39257FD204000B80C8 /* DetailTableViewCell.swift */,
 				63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */,
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FDFE1B257E698F000B80C8 /* MainViewController.swift in Sources */,
-				63FDFE2E257E6AA6000B80C8 /* ParserManager.swift in Sources */,
+				63FDFE2E257E6AA6000B80C8 /* DataFetcher.swift in Sources */,
 				63FDFE21257E698F000B80C8 /* Albums_from_iTunes.xcdatamodeld in Sources */,
 				63FDFE38257FB7E8000B80C8 /* TrackTableViewCell.swift in Sources */,
 				63FDFE30257E6FBF000B80C8 /* Model.swift in Sources */,
@@ -314,6 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Albums from iTunes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Albums from iTunes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
