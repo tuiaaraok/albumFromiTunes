@@ -11,7 +11,6 @@ import Foundation
 class SortingManager {
 
     static func sortingByNumber(_ tracksOfAlbum: [TrackDetails]) -> [TrackDetails] {
-        
         let sortedTracks = tracksOfAlbum.sorted { first, second -> Bool in
             first.trackNumber! < second.trackNumber!
         }

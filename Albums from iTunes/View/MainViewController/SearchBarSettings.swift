@@ -11,11 +11,15 @@ import UIKit
 extension MainViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        DataFetcher.fetchData(self.urlFirstPart + WorkWithString.replaceSpaces(searchText).lowercased() + self.urlSecondPart, completion: self.fetch(albums:))
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        let newSearchText = WorkWithString.replaceSpaces(searchText).lowercased()
+        guard let viewModel = viewModel else { return }
+        viewModel.searchAlbum(newSearchText)
+        activityIndicator.stopAnimating()
     }
 
     func searchBarCancelButtonClicked(_ searchController: UISearchBar) {
-
         isSearch = false
         searchBar.text = ""
         collectionView.reloadData()

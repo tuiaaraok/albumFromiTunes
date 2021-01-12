@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Альбомы-->
+        <!--Albums-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Albums_from_iTunes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Albums_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,8 +25,12 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="5mu-Jn-Dk6">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="752"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collcell" id="pqI-9d-laM" customClass="AlbumCollectionViewCell" customModule="Albums_from_iTunes" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collcell" id="pqI-9d-laM" customClass="AlbumCollectionViewCell" customModule="Albums_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="219"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vcD-Kk-BrY">
@@ -44,7 +48,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vR-c9-rR3">
                                                     <rect key="frame" x="9" y="182" width="169" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="169" id="V35-OY-u9F"/>
                                                         <constraint firstAttribute="height" constant="16" id="ybB-lb-HqC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -57,13 +60,16 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="BXd-co-N9b"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="jn8-H1-UTR"/>
-                                                        <constraint firstAttribute="width" constant="169" id="t0b-Ce-q5g"/>
                                                         <constraint firstAttribute="height" constant="16" id="vBH-JV-Uwo"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-Ch-awi">
+                                                    <rect key="frame" x="83" y="83" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="B5n-TC-4nF" secondAttribute="trailing" constant="9" id="3gG-lJ-8ML"/>
@@ -83,6 +89,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="187" height="219"/>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="GMo-Ch-awi" id="wUL-zG-biZ"/>
                                             <outlet property="albumImage" destination="atj-wO-bjZ" id="ZCq-5g-zWx"/>
                                             <outlet property="albumNameLabel" destination="7vR-c9-rR3" id="bfU-jP-YmV"/>
                                             <outlet property="artistNameLabel" destination="B5n-TC-4nF" id="EmU-FK-D0u"/>
@@ -109,7 +116,6 @@
                             <constraint firstItem="YQk-Km-QWV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="1Nj-cy-ng2"/>
                             <constraint firstItem="DVT-06-vtk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8hi-Ik-HgR"/>
                             <constraint firstItem="DVT-06-vtk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gcq-HB-1lC"/>
-                            <constraint firstItem="YQk-Km-QWV" firstAttribute="top" secondItem="DVT-06-vtk" secondAttribute="bottom" id="Tg1-z2-gdD"/>
                             <constraint firstItem="DVT-06-vtk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ao8-UG-PgH"/>
                             <constraint firstItem="YQk-Km-QWV" firstAttribute="top" secondItem="DVT-06-vtk" secondAttribute="bottom" id="eyA-E4-gZJ"/>
                             <constraint firstItem="YQk-Km-QWV" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="lJl-ww-0Hx"/>
@@ -117,8 +123,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Альбомы" id="cRK-lz-Cii"/>
+                    <navigationItem key="navigationItem" title="Albums" id="cRK-lz-Cii"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="5mu-Jn-Dk6" id="eHk-JH-lKh"/>
                         <outlet property="collectionView" destination="YQk-Km-QWV" id="ah5-sd-rEV"/>
                         <outlet property="searchBar" destination="DVT-06-vtk" id="xek-eb-2D9"/>
                     </connections>
@@ -130,13 +137,17 @@
         <!--Detail Table View Controller-->
         <scene sceneID="9gG-UE-5u2">
             <objects>
-                <tableViewController id="h3Q-fC-Xlt" customClass="DetailTableViewController" customModule="Albums_from_iTunes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="h3Q-fC-Xlt" customClass="DetailTableViewController" customModule="Albums_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="syX-Xq-xJG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="BHN-m2-iNh">
+                            <rect key="frame" x="0.0" y="609" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="504" id="Ndl-2t-8mo" customClass="DetailTableViewCell" customModule="Albums_from_iTunes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="504" id="Ndl-2t-8mo" customClass="DetailTableViewCell" customModule="Albums_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="504"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ndl-2t-8mo" id="u4m-WZ-qGl">
@@ -182,7 +193,6 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-V7-AZS">
                                             <rect key="frame" x="20" y="432" width="374" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="374" id="64J-iD-b0H"/>
                                                 <constraint firstAttribute="height" constant="16" id="eBv-Kb-pwe"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="zzk-ab-xlb"/>
                                             </constraints>
@@ -190,10 +200,12 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="whe-K1-3c6">
+                                            <rect key="frame" x="197" y="158" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="q3P-V7-AZS" firstAttribute="leading" secondItem="u4m-WZ-qGl" secondAttribute="leadingMargin" id="0CY-WF-h6E"/>
-                                        <constraint firstItem="q3P-V7-AZS" firstAttribute="trailing" secondItem="u4m-WZ-qGl" secondAttribute="trailingMargin" id="2IP-RE-tAZ"/>
                                         <constraint firstItem="q3P-V7-AZS" firstAttribute="centerX" secondItem="u4m-WZ-qGl" secondAttribute="centerX" id="2dp-5s-qY9"/>
                                         <constraint firstItem="mjk-eF-SSd" firstAttribute="width" secondItem="Dsc-Z0-LXQ" secondAttribute="width" id="5ie-gZ-qg0"/>
                                         <constraint firstItem="wc9-sI-Bkq" firstAttribute="centerX" secondItem="u4m-WZ-qGl" secondAttribute="centerX" id="6X1-u5-k97"/>
@@ -201,7 +213,6 @@
                                         <constraint firstItem="q3P-V7-AZS" firstAttribute="width" secondItem="u4m-WZ-qGl" secondAttribute="height" multiplier="187:252" id="75a-p8-wBH"/>
                                         <constraint firstItem="wc9-sI-Bkq" firstAttribute="leading" secondItem="u4m-WZ-qGl" secondAttribute="leadingMargin" id="8mv-FD-aBE"/>
                                         <constraint firstAttribute="bottom" secondItem="PYd-gJ-0oE" secondAttribute="bottom" constant="8" id="8uw-V3-0rF"/>
-                                        <constraint firstItem="wc9-sI-Bkq" firstAttribute="trailing" secondItem="u4m-WZ-qGl" secondAttribute="trailingMargin" id="A4v-H6-902"/>
                                         <constraint firstItem="PYd-gJ-0oE" firstAttribute="centerX" secondItem="u4m-WZ-qGl" secondAttribute="centerX" id="APy-Dy-KkA"/>
                                         <constraint firstItem="wc9-sI-Bkq" firstAttribute="width" secondItem="u4m-WZ-qGl" secondAttribute="height" multiplier="187:252" id="DQR-lp-LXD"/>
                                         <constraint firstItem="PYd-gJ-0oE" firstAttribute="width" secondItem="u4m-WZ-qGl" secondAttribute="height" multiplier="187:252" id="Dmu-iQ-pMq"/>
@@ -223,6 +234,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="whe-K1-3c6" id="iC9-Jt-Wmc"/>
                                     <outlet property="albumImageView" destination="94u-J4-32g" id="7XN-ke-BCR"/>
                                     <outlet property="albumNameLabel" destination="Dsc-Z0-LXQ" id="isM-vb-Z0J"/>
                                     <outlet property="artistNameLabel" destination="mjk-eF-SSd" id="34J-e9-KT2"/>
@@ -232,7 +244,7 @@
                                     <outlet property="trackCountLabel" destination="wc9-sI-Bkq" id="NJK-Z5-ar4"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="trackcell" rowHeight="49" id="vxn-LA-Eq7" customClass="TrackTableViewCell" customModule="Albums_from_iTunes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="trackcell" rowHeight="49" id="vxn-LA-Eq7" customClass="TrackTableViewCell" customModule="Albums_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="532" width="414" height="49"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vxn-LA-Eq7" id="NV2-eR-jbH">
@@ -258,6 +270,10 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5s2-JF-79E">
+                                            <rect key="frame" x="197" y="15" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pwC-sj-Qkn" firstAttribute="leading" secondItem="NV2-eR-jbH" secondAttribute="leadingMargin" id="0jz-Lg-oy6"/>
@@ -270,8 +286,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="number" destination="pwC-sj-Qkn" id="8gb-dq-3j1"/>
-                                    <outlet property="trackName" destination="yiG-wS-H9e" id="Dtg-7b-PpG"/>
+                                    <outlet property="activityIndicator" destination="5s2-JF-79E" id="brU-Qf-QgS"/>
+                                    <outlet property="numberLabel" destination="pwC-sj-Qkn" id="8gb-dq-3j1"/>
+                                    <outlet property="trackNameLabel" destination="yiG-wS-H9e" id="Dtg-7b-PpG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

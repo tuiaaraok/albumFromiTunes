@@ -10,19 +10,52 @@ import UIKit
 
 class DataFetcher {
     
-    static func fetchData<T: Decodable> ( _ urlString: String, completion: @escaping (T) -> ()) {
+    var tracks: [TrackDetails] = []
+    static var shared = DataFetcher()
+    
+    func fetchData( _ searchText: String, completion: @escaping ([AlbumDescription]) -> Void) {
+
+        let urlFirstPart =  "https://itunes.apple.com/search?term="
+        let urlSecondPart = "&entity=album"
+        let urlString = urlFirstPart + searchText + urlSecondPart
+        
+        guard let url = urlString.getUrl() else { return }
+
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else { return }
+            do {
+                let albums = try JSONDecoder().decode(Album.self, from: data)
+                DispatchQueue.main.async {
+                    completion(albums.results)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),
+                                                    object: nil)
+                }
+            } catch let error {
+                print(error)
+            }
+        }.resume()
+    }
+    
+    func fetchTracks(_ album: AlbumDescription, _ tableView: UITableView) {
+        
+        let urlFirstPart = "https://itunes.apple.com/lookup?id="
+        let urlSecondPart = "&entity=song&limit=800"
+        let urlString = urlFirstPart + String(album.collectionId) + urlSecondPart
 
         guard let url = URL(string: urlString) else { return }
-
         URLSession.shared.dataTask(with: url) { (data, _, _) in
 
             guard let data = data else { return }
 
             do {
-                let tracks = try JSONDecoder().decode(T.self, from: data)
-
+                let tracks = try JSONDecoder().decode(Track.self, from: data)
                 DispatchQueue.main.async {
-                    completion(tracks)
+                    var tracksAndInfo = tracks.results
+                    // remove artist info
+                    tracksAndInfo.remove(at: 0)
+                    let sortedTracks = SortingManager.sortingByNumber(tracksAndInfo)
+                    self.tracks = sortedTracks
+                    tableView.reloadData()
                 }
             } catch let error {
                 print(error)
@@ -30,16 +63,51 @@ class DataFetcher {
         }.resume()
     }
        
-    static func fetchImage(imageString: String?, imageView: UIImageView) {
-
-        DispatchQueue.global().async {
-            guard let imageString = imageString else { return }
-            guard let imageUrl = URL(string: imageString) else { return }
-            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-
+    func fetchImage(imageString: String?, completion: @escaping (Data) -> Void) {
+       
+        guard let url = imageString  else { return }
+        guard let imageURL = URL(string: url) else {
+//            image = #imageLiteral(resourceName: "defaultImage")
+            return
+        }
+        if let cachedImage = getCachedImage(url: imageURL) {
             DispatchQueue.main.async {
-                imageView.image = UIImage(data: imageData)
+               completion(cachedImage)
             }
         }
-    }       
+   
+        URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if let error = error { print(error.localizedDescription); return }
+                       
+            guard let data = data, let response = response else { return }
+            guard let responseURL = response.url else { return }
+
+            if responseURL.absoluteString != url { return }
+                       
+            DispatchQueue.main.async {
+                completion(data)
+            }
+            self.saveImageToCache(data: data, response: response)
+        }.resume()
+    }
+    
+    func saveImageToCache(data: Data, response: URLResponse) {
+        guard let responseURL = response.url else { return }
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        URLCache.shared.storeCachedResponse(cachedResponse, for: URLRequest(url: responseURL))
+    }
+        
+    func getCachedImage(url: URL) -> Data? {
+        if let cacheResponse = URLCache.shared.cachedResponse(for: URLRequest(url: url)) {
+            return cacheResponse.data
+        }
+        return nil
+    }
+}
+
+fileprivate extension String {
+    func getUrl() -> URL? {
+        guard let url = URL(string: self) else {return nil}
+        return url
+    }
 }
