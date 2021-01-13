@@ -36,12 +36,10 @@ extension DetailTableViewController {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as? DetailTableViewCell
-            guard let tableViewCell = cell else { return UITableViewCell() }
-            guard let album = viewModel?.album else { return UITableViewCell() }
+            guard let tableViewCell = cell, let album = viewModel?.album else { return UITableViewCell() }
             let cellViewModel = DetailTableviewCellViewModel0row(album: album)
             tableViewCell.viewModel = cellViewModel
             return  tableViewCell
-
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "trackcell", for: indexPath) as? TrackTableViewCell
             guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }

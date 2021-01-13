@@ -11,9 +11,7 @@ import Foundation
 class ViewModel: CollectionViewViewModelType {
 
     var selectedIndexPath: IndexPath?
-
     var albums: [AlbumDescription]?
-    
     var imagesUrl: [String] {
         guard let albums = albums else { return [""]}
         var imagesString = albums.map{$0.artworkUrl100}
@@ -39,7 +37,6 @@ class ViewModel: CollectionViewViewModelType {
         guard let albums = albums else { return nil }
         let album = albums[indexPath.row]
         let imageUrl = imagesUrl[indexPath.row]
-
         return CollectionViewCellViewModel(album: album, imageUrl: imageUrl)
     }
     

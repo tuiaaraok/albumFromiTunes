@@ -9,7 +9,9 @@
 import Foundation
 
 protocol DetailTableViewViewModelType {
+    var tracks: [TrackDetails] { get }
     var album: AlbumDescription? { get }
+    var imageUrl: String? { get }
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
 }

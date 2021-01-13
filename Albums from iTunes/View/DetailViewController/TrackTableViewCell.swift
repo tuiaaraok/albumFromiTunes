@@ -12,7 +12,7 @@ class TrackTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var numberLabel: UILabel!
     @IBOutlet weak private var trackNameLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
     weak var viewModel: TableViewCellViewModelType? {
         willSet(viewModel) {
