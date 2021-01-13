@@ -11,7 +11,7 @@ import Foundation
 class DetailTableViewCellViewModel: TableViewCellViewModelType {
     
     private var track: TrackDetails
-    
+
     var trackName: String {
         guard let trackName = track.trackName else { return "" }
         return trackName

@@ -18,9 +18,7 @@ class DataFetcher {
         let urlFirstPart =  "https://itunes.apple.com/search?term="
         let urlSecondPart = "&entity=album"
         let urlString = urlFirstPart + searchText + urlSecondPart
-        
         guard let url = urlString.getUrl() else { return }
-
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
             do {
@@ -44,9 +42,7 @@ class DataFetcher {
 
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-
             guard let data = data else { return }
-
             do {
                 let tracks = try JSONDecoder().decode(Track.self, from: data)
                 DispatchQueue.main.async {
@@ -67,7 +63,6 @@ class DataFetcher {
        
         guard let url = imageString  else { return }
         guard let imageURL = URL(string: url) else {
-//            image = #imageLiteral(resourceName: "defaultImage")
             return
         }
         if let cachedImage = getCachedImage(url: imageURL) {
@@ -81,9 +76,7 @@ class DataFetcher {
                        
             guard let data = data, let response = response else { return }
             guard let responseURL = response.url else { return }
-
             if responseURL.absoluteString != url { return }
-                       
             DispatchQueue.main.async {
                 completion(data)
             }
