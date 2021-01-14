@@ -43,7 +43,7 @@ class DetailTableViewCell: UITableViewCell {
                     self.activityIndicator.stopAnimating()
                 }
             }
-       }
+        } 
     }
     
     private func configureUIImage() {

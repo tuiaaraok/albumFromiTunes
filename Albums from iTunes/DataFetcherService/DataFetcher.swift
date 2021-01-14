@@ -14,7 +14,6 @@ class DataFetcher {
     static var shared = DataFetcher()
     
     func fetchData( _ searchText: String, completion: @escaping ([AlbumDescription]) -> Void) {
-
         let urlFirstPart =  "https://itunes.apple.com/search?term="
         let urlSecondPart = "&entity=album"
         let urlString = urlFirstPart + searchText + urlSecondPart
@@ -35,11 +34,9 @@ class DataFetcher {
     }
     
     func fetchTracks(_ album: AlbumDescription, _ tableView: UITableView) {
-        
         let urlFirstPart = "https://itunes.apple.com/lookup?id="
         let urlSecondPart = "&entity=song&limit=800"
         let urlString = urlFirstPart + String(album.collectionId) + urlSecondPart
-
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
@@ -60,17 +57,14 @@ class DataFetcher {
     }
        
     func fetchImage(imageString: String?, completion: @escaping (Data) -> Void) {
-       
+
         guard let url = imageString  else { return }
-        guard let imageURL = URL(string: url) else {
-            return
-        }
+        guard let imageURL = URL(string: url) else { return }
         if let cachedImage = getCachedImage(url: imageURL) {
             DispatchQueue.main.async {
                completion(cachedImage)
             }
         }
-   
         URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             if let error = error { print(error.localizedDescription); return }
                        
@@ -84,13 +78,13 @@ class DataFetcher {
         }.resume()
     }
     
-    func saveImageToCache(data: Data, response: URLResponse) {
+    private func saveImageToCache(data: Data, response: URLResponse) {
         guard let responseURL = response.url else { return }
         let cachedResponse = CachedURLResponse(response: response, data: data)
         URLCache.shared.storeCachedResponse(cachedResponse, for: URLRequest(url: responseURL))
     }
         
-    func getCachedImage(url: URL) -> Data? {
+    private func getCachedImage(url: URL) -> Data? {
         if let cacheResponse = URLCache.shared.cachedResponse(for: URLRequest(url: url)) {
             return cacheResponse.data
         }

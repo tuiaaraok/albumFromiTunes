@@ -15,18 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-       
-        
-//        var imagesString = DataFetcher.shared.albums.map{$0.artworkUrl100}
-//        imagesString = imagesString.map{WorkWithString.changeImageSizeInUrl($0)}
-//        for url in imagesString {
-//      //            DispatchQueue.global().async {
-//                      DataFetcher.shared.fetchImage(imageString: url)
-//        }
-      //            }
-        
-        // Override point for customization after application launch.
         return true
     }
 
@@ -90,6 +78,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

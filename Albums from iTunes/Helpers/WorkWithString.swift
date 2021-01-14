@@ -21,11 +21,7 @@ class WorkWithString {
     static func replaceSpaces(_ text: String) -> String {
         var word = ""
         for i in text {
-            if i == " " {
-                word += "+"
-            } else {
-                word += "\(i)"
-            }
+            word += i == " " ? "+" : "\(i)"
         }
         return word
     }
