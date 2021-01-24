@@ -18,6 +18,7 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak private var trackCountLabel: UILabel!
     @IBOutlet weak private var copyrightLabel: UILabel!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    var imageDataFetcher = ImageDataFetcher()
     
     func configureCell() {
         activityIndicator.startAnimating()
@@ -37,7 +38,7 @@ class DetailTableViewCell: UITableViewCell {
             trackCountLabel.text = viewModel.album.trackCount == 1 ?  " 1 track" : "\(viewModel.album.trackCount) tracks"
             
             let imageUrl = viewModel.imageUrl
-            DataFetcher.shared.fetchImage(imageString: imageUrl) { (data) in
+            imageDataFetcher.fetchImage(imageString: imageUrl) { (data) in
                 DispatchQueue.main.async {
                     self.albumImageView.image = UIImage(data: data)
                     self.activityIndicator.stopAnimating()

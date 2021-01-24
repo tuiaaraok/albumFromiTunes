@@ -19,9 +19,18 @@ class DetailTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let album = viewModel?.album else { return }
-        DataFetcher.shared.tracks = []
-        DataFetcher.shared.fetchTracks(album, tableView)
+//        guard let album = viewModel?.album else { return }
+//        DataFetcher.shared.tracks = []
+//        DataFetcher.shared.fetchTracks(album, tableView)
+        guard let viewModel = viewModel else { return }
+        viewModel.getTracks()
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "reloadDetailVC"), object: nil)
+    }
+    
+    @objc func reload() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource

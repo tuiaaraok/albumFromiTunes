@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631969A725BC8ADE00F8D310 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631969A625BC8ADE00F8D310 /* DataFetcherService.swift */; };
+		631969A925BCA21A00F8D310 /* ImageDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631969A825BCA21A00F8D310 /* ImageDataFetcher.swift */; };
+		631969AB25BD7D0300F8D310 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631969AA25BD7D0300F8D310 /* DataStore.swift */; };
+		631969AD25BD8A0A00F8D310 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631969AC25BD8A0A00F8D310 /* NetworkService.swift */; };
 		6350088B25A4E8A8007AF1A7 /* CollectionViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350088A25A4E8A8007AF1A7 /* CollectionViewViewModelType.swift */; };
 		63C5ACF325875D09007F64F7 /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5ACF225875D09007F64F7 /* TableViewCellViewModelType.swift */; };
 		63C5ACF525875D9C007F64F7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5ACF425875D9C007F64F7 /* DetailViewModel.swift */; };
@@ -24,7 +28,7 @@
 		63FDFE1E257E698F000B80C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE1C257E698F000B80C8 /* Main.storyboard */; };
 		63FDFE23257E6990000B80C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE22257E6990000B80C8 /* Assets.xcassets */; };
 		63FDFE26257E6990000B80C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FDFE24257E6990000B80C8 /* LaunchScreen.storyboard */; };
-		63FDFE2E257E6AA6000B80C8 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */; };
+		63FDFE2E257E6AA6000B80C8 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2D257E6AA6000B80C8 /* NetworkDataFetcher.swift */; };
 		63FDFE30257E6FBF000B80C8 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE2F257E6FBF000B80C8 /* Album.swift */; };
 		63FDFE32257EB239000B80C8 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */; };
 		63FDFE36257FB6A7000B80C8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631969A625BC8ADE00F8D310 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		631969A825BCA21A00F8D310 /* ImageDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataFetcher.swift; sourceTree = "<group>"; };
+		631969AA25BD7D0300F8D310 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		631969AC25BD8A0A00F8D310 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6350088A25A4E8A8007AF1A7 /* CollectionViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewModelType.swift; sourceTree = "<group>"; };
 		63C5ACF225875D09007F64F7 /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		63C5ACF425875D9C007F64F7 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -55,7 +63,7 @@
 		63FDFE22257E6990000B80C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FDFE25257E6990000B80C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63FDFE27257E6990000B80C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		63FDFE2D257E6AA6000B80C8 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		63FDFE2F257E6FBF000B80C8 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		63FDFE31257EB239000B80C8 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		63FDFE35257FB6A7000B80C8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +172,7 @@
 				6350088925A25D22007AF1A7 /* View */,
 				63C5ACF82588C5E9007F64F7 /* ViewModel */,
 				63C5ACF125875CCD007F64F7 /* Protocols */,
-				63FDFE4225812472000B80C8 /* DataFetcherService */,
+				63FDFE4225812472000B80C8 /* Networking */,
 				63FDFE452581254E000B80C8 /* Helpers */,
 				63FDFE4025812419000B80C8 /* UIBuilders */,
 				63C91AF4258140DB00564B48 /* SupportFiles */,
@@ -190,12 +198,16 @@
 			path = UIBuilders;
 			sourceTree = "<group>";
 		};
-		63FDFE4225812472000B80C8 /* DataFetcherService */ = {
+		63FDFE4225812472000B80C8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				63FDFE2D257E6AA6000B80C8 /* DataFetcher.swift */,
+				63FDFE2D257E6AA6000B80C8 /* NetworkDataFetcher.swift */,
+				631969AC25BD8A0A00F8D310 /* NetworkService.swift */,
+				631969A825BCA21A00F8D310 /* ImageDataFetcher.swift */,
+				631969AA25BD7D0300F8D310 /* DataStore.swift */,
+				631969A625BC8ADE00F8D310 /* DataFetcherService.swift */,
 			);
-			path = DataFetcherService;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		63FDFE452581254E000B80C8 /* Helpers */ = {
@@ -282,7 +294,7 @@
 				63FDFE44258124B4000B80C8 /* WorkWithString.swift in Sources */,
 				63C91AF825814B0D00564B48 /* SearchBarSettings.swift in Sources */,
 				63FDFE3C25810E80000B80C8 /* Track.swift in Sources */,
-				63FDFE2E257E6AA6000B80C8 /* DataFetcher.swift in Sources */,
+				63FDFE2E257E6AA6000B80C8 /* NetworkDataFetcher.swift in Sources */,
 				63C5ACFE25890797007F64F7 /* CollectionViewCellViewModelType.swift in Sources */,
 				63FDFE38257FB7E8000B80C8 /* TrackTableViewCell.swift in Sources */,
 				63C5ACF725876399007F64F7 /* DetailTableViewCellViewModel.swift in Sources */,
@@ -291,9 +303,12 @@
 				63FDFE36257FB6A7000B80C8 /* DetailTableViewController.swift in Sources */,
 				63F8D8B625AE045B000618CE /* DetailTableViewCellViewModelType.swift in Sources */,
 				63C5ACFC2589061F007F64F7 /* CollectionViewCellViewModel.swift in Sources */,
+				631969AD25BD8A0A00F8D310 /* NetworkService.swift in Sources */,
+				631969AB25BD7D0300F8D310 /* DataStore.swift in Sources */,
 				63F8D8BA25AE1732000618CE /* DetailTableViewViewModelType.swift in Sources */,
 				63C5ACF325875D09007F64F7 /* TableViewCellViewModelType.swift in Sources */,
 				63FDFE17257E698F000B80C8 /* AppDelegate.swift in Sources */,
+				631969A925BCA21A00F8D310 /* ImageDataFetcher.swift in Sources */,
 				63FDFE3F25810EE9000B80C8 /* SortingManager.swift in Sources */,
 				63FDFE19257E698F000B80C8 /* SceneDelegate.swift in Sources */,
 				63FDFE3A257FD204000B80C8 /* DetailTableViewCell.swift in Sources */,
@@ -301,6 +316,7 @@
 				63FDFE32257EB239000B80C8 /* AlbumCollectionViewCell.swift in Sources */,
 				6350088B25A4E8A8007AF1A7 /* CollectionViewViewModelType.swift in Sources */,
 				63C5ACFA2589050E007F64F7 /* ViewModel.swift in Sources */,
+				631969A725BC8ADE00F8D310 /* DataFetcherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

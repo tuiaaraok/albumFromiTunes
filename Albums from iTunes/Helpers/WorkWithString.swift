@@ -25,4 +25,23 @@ class WorkWithString {
         }
         return word
     }
+    
+    func createAlbumsUrlString( _ searchText: String) -> String {
+        let urlFirstPart =  "https://itunes.apple.com/search?term="
+        let urlSecondPart = "&entity=album"
+        return urlFirstPart + searchText + urlSecondPart
+    }
+    
+    func createTracksUrlString(_ album: AlbumDescription) -> String {
+        let urlFirstPart = "https://itunes.apple.com/lookup?id="
+        let urlSecondPart = "&entity=song&limit=800"
+        return urlFirstPart + String(album.collectionId) + urlSecondPart
+    }
+}
+
+extension String {
+    func getUrl() -> URL? {
+        guard let url = URL(string: self) else {return nil}
+        return url
+    }
 }

@@ -15,6 +15,8 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var artistNameLabel: UILabel!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
+    var imageDataFetcher = ImageDataFetcher()
+    
     weak var viewModel: CollectionViewCellViewModelType? {
         willSet(viewModel) {
             activityIndicator.startAnimating()
@@ -24,7 +26,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         
             guard let imageUrl = viewModel?.imageUrl else { return }
     
-            DataFetcher.shared.fetchImage(imageString: imageUrl) { (data) in
+            imageDataFetcher.fetchImage(imageString: imageUrl) { (data) in
                 DispatchQueue.main.async {
                     self.albumImage.image = UIImage(data: data)
                     self.activityIndicator.stopAnimating()

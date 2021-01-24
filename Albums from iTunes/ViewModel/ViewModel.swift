@@ -10,6 +10,7 @@ import Foundation
 
 class ViewModel: CollectionViewViewModelType {
 
+    var dataFetcherService = DataFetcherService()
     var selectedIndexPath: IndexPath?
     var albums: [AlbumDescription]?
     var imagesUrl: [String] {
@@ -20,8 +21,8 @@ class ViewModel: CollectionViewViewModelType {
     }
     
     func getData() {
-        DataFetcher.shared.fetchData("the+fame") {[weak self] (albums) in
-            self?.albums = albums
+        dataFetcherService.fetchAlbums { (albums) in
+            self.albums = albums?.results
         }
     }
     
@@ -41,8 +42,8 @@ class ViewModel: CollectionViewViewModelType {
     }
     
     func searchAlbum(_ searchText: String) {
-        DataFetcher.shared.fetchData(searchText) { [weak self] (albums) in
-            self?.albums = albums
+        dataFetcherService.fetchAlbums(searchText: searchText) {  [weak self] (albums) in
+            self?.albums = albums?.results
         }
     }
     

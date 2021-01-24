@@ -15,7 +15,6 @@ class DetailTableviewCellViewModel0row: DetailTableViewCellViewModelType {
         imagesString = WorkWithString.changeImageSizeInUrl(imagesString)
         return imagesString
     }
-    
     init(album: AlbumDescription) {
         self.album = album
     }
