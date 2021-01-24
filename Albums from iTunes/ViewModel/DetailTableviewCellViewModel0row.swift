@@ -10,12 +10,30 @@ import Foundation
 
 class DetailTableviewCellViewModel0row: DetailTableViewCellViewModelType {
     var album: AlbumDescription
+    init(album: AlbumDescription) {
+        self.album = album
+    }
     var imageUrl: String {
         var imagesString = album.artworkUrl100
         imagesString = WorkWithString.changeImageSizeInUrl(imagesString)
         return imagesString
     }
-    init(album: AlbumDescription) {
-        self.album = album
+    var collectionName: String {
+        return album.collectionName
+    }
+    var artistName: String {
+        return album.artistName
+    }
+    var primaryGenreName: String {
+        return album.primaryGenreName
+    }
+    var country: String {
+        return album.country
+    }
+    var copyright: String {
+        return album.copyright ?? ""
+    }
+    var trackCount: Int {
+        return album.trackCount
     }
 }

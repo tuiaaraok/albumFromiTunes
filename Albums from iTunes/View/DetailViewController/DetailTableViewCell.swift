@@ -30,12 +30,12 @@ class DetailTableViewCell: UITableViewCell {
         willSet(viewModel) {
             configureCell()
             guard let viewModel = viewModel else { return }
-            albumNameLabel.text = viewModel.album.collectionName
-            artistNameLabel.text = viewModel.album.artistName
-            genreLabel.text = viewModel.album.primaryGenreName
-            countryLabel.text = viewModel.album.country
-            copyrightLabel.text = viewModel.album.copyright
-            trackCountLabel.text = viewModel.album.trackCount == 1 ?  " 1 track" : "\(viewModel.album.trackCount) tracks"
+            albumNameLabel.text = viewModel.collectionName
+            artistNameLabel.text = viewModel.artistName
+            genreLabel.text = viewModel.primaryGenreName
+            countryLabel.text = viewModel.country
+            copyrightLabel.text = viewModel.copyright
+            trackCountLabel.text = viewModel.trackCount == 1 ?  " 1 track" : "\(viewModel.trackCount) tracks"
             
             let imageUrl = viewModel.imageUrl
             imageDataFetcher.fetchImage(imageString: imageUrl) { (data) in
