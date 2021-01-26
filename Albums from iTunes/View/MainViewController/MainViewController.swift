@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel()
-//        viewModel?.getData()
+        viewModel?.getData()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "reload"), object: nil)
@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return viewModel?.numberOfRows() ?? 0
+        return viewModel?.numberOfRows() ?? 0
        }
        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
