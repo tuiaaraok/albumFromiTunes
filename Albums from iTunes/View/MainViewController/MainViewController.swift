@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel()
-        viewModel?.getData()
+//        viewModel?.getData()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "reload"), object: nil)

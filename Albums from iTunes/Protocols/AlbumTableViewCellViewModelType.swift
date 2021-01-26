@@ -8,13 +8,10 @@
 
 import Foundation
 
-protocol DetailTableViewCellViewModelType: class {
-    var album: AlbumDescription { get }
+protocol AlbumTableViewCellViewModelType: class {
     var imageUrl: String { get }
     var collectionName: String { get }
-    var artistName: String {
-        get
-    }
+    var artistName: String { get }
     var primaryGenreName: String { get }
     var country: String { get }
     var copyright: String { get }

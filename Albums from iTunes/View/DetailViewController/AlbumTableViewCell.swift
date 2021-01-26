@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class AlbumTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var albumImageView: UIImageView!
     @IBOutlet weak private var albumNameLabel: UILabel!
@@ -26,7 +26,7 @@ class DetailTableViewCell: UITableViewCell {
         configureUIImage()
     }
     
-    weak var viewModel: DetailTableViewCellViewModelType? {
+    weak var viewModel: AlbumTableViewCellViewModelType? {
         willSet(viewModel) {
             configureCell()
             guard let viewModel = viewModel else { return }

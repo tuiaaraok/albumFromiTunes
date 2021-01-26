@@ -19,9 +19,6 @@ class DetailTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        guard let album = viewModel?.album else { return }
-//        DataFetcher.shared.tracks = []
-//        DataFetcher.shared.fetchTracks(album, tableView)
         guard let viewModel = viewModel else { return }
         viewModel.getTracks()
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "reloadDetailVC"), object: nil)
@@ -44,15 +41,15 @@ extension DetailTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as? DetailTableViewCell
-            guard let tableViewCell = cell, let album = viewModel?.album else { return UITableViewCell() }
-            let cellViewModel = DetailTableviewCellViewModel0row(album: album)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as? AlbumTableViewCell
+            guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
+            let cellViewModel = viewModel.albumCellViewModel(forIndexPath: indexPath)
             tableViewCell.viewModel = cellViewModel
             return  tableViewCell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "trackcell", for: indexPath) as? TrackTableViewCell
             guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
-            let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+            let cellViewModel = viewModel.trackCellViewModel(forIndexPath: indexPath)
             tableViewCell.viewModel = cellViewModel
             return  tableViewCell
         }

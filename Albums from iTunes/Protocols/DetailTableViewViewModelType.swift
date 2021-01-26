@@ -14,5 +14,6 @@ protocol DetailTableViewViewModelType {
     var imageUrl: String? { get }
     func getTracks()
     func numberOfRows() -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
+    func trackCellViewModel(forIndexPath indexPath: IndexPath) -> TrackTableViewCellViewModelType?
+    func albumCellViewModel(forIndexPath indexPath: IndexPath) -> AlbumTableViewCellViewModelType?
 }

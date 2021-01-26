@@ -14,7 +14,7 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak private var trackNameLabel: UILabel!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
-    weak var viewModel: TableViewCellViewModelType? {
+    weak var viewModel: TrackTableViewCellViewModelType? {
         willSet(viewModel) {
             activityIndicator.startAnimating()
             activityIndicator.hidesWhenStopped = true

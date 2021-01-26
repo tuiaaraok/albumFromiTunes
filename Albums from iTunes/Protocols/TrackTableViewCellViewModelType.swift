@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TableViewCellViewModelType: class {
+protocol TrackTableViewCellViewModelType: class {
     var trackName: String { get }
     var number: String { get }
 }

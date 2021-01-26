@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailTableViewCellViewModel: TableViewCellViewModelType {
+class TrackTableViewCellViewModel: TrackTableViewCellViewModelType {
     
     private var track: TrackDetails
 

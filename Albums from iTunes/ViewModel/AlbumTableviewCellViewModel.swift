@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailTableviewCellViewModel0row: DetailTableViewCellViewModelType {
+class AlbumTableviewCellViewModel: AlbumTableViewCellViewModelType {
     var album: AlbumDescription
     init(album: AlbumDescription) {
         self.album = album
