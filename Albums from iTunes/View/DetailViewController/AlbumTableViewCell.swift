@@ -51,7 +51,7 @@ class AlbumTableViewCell: UITableViewCell {
         albumImageView.layer.masksToBounds = false
         albumImageView.layer.shadowOffset = CGSize(width: 0, height: 3.0)
         albumImageView.layer.shadowColor = UIColor.lightGray.cgColor
-        albumImageView.layer.shadowOpacity = 5
         albumImageView.layer.shadowRadius = 5
+        albumImageView.layer.shadowOpacity = 5
     }
 }
