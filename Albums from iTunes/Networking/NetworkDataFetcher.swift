@@ -6,7 +6,7 @@
 //  Copyright © 2020 Туйаара Оконешникова. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol DataFetcher {
     func fetchGenericJSONData<T: Decodable>(urlString: String, reloadName: String, response: @escaping (T?) -> Void)
